@@ -1,0 +1,234 @@
+doctype html
+html(lang='zh-TW')
+    head
+        meta(charset="UTF-8")
+        //- 相容性模式
+        meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")
+        //-  相容性模式-end
+        meta(name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=yes")
+        
+        //- SEO - - 
+        title WALNUT.M Y.S. STUDIO
+        //- meta(name='company', content='公司名稱 ')
+        //- meta(name='author', content='作者名稱')
+        //- meta(name='copyright', content='本網頁著作權...所有, All Rights Reserved')
+        //- meta(name='description', content='網頁描述 ')
+        //- SEO-end
+
+
+        //- link - -
+        //- reset
+        //- link(rel='stylesheet' href='css/reset.css' type='text/css')
+
+        //- plugins
+        link(rel='stylesheet' href='css/bootstrap.css' type='text/css')
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900")
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+        link(rel="stylesheet", href="css/jquery.fullPage.css")
+        link(rel="stylesheet", href="css/OwlCarousel2-2.2.1/owl.carousel.css")
+        link(rel="stylesheet", href="css/OwlCarousel2-2.2.1/owl.theme.default.css")
+
+        //- custom
+        link(rel='stylesheet' href='css/style.css' type='text/css')
+        //- link(rel="shortcut icon" href="favicon.ico")
+        //- link- End
+
+
+
+    body
+        .wrapper
+            //- Start header
+            header.header
+                .container
+                    .navbar.clearfix
+                        a.navbar__logo.ontheTop(href="#")
+                        a.menu-toggle(href="#overlay")
+                            span
+                            span
+                            span
+                        .nav.navbar__nav.popup-nav#overlay
+                            a.popup-nav__close(href="#!")
+                                span
+                                span
+                            ul.menu.nav__menu
+                                li
+                                    a.menu__item(href="#secondPage") About
+                                li
+                                    a.menu__item(href="#thirdPage") Service
+                                li
+                                    a.menu__item(href="#forthPage") Shop
+                                li
+                                    a.menu__item(href="#fifthPage") Contact
+                            .nav__icon-group
+                                a(href="https://www.facebook.com" target="_blank")
+                                    i.icon.fa.fa-facebook-square
+                                a(href="https://www.instagram.com" target="_blank")
+                                    i.icon.fa.fa-instagram
+
+            //- End header
+            
+            #fullpage
+                //- Start hero
+                .section.hero(data-anchor="firstPage")
+                    .container.rellax(data-rellax-speed="-2")
+                        h1.heading We tell<br>the story about wood
+                        a.btn.btn--primary(href="#!") BUY IT NOW
+                    a(href="#secondPage").scrollDown-btn
+                //- End hero
+                //- Start about
+                .section.about(data-anchor="secondPage")
+                    .container
+                        .row
+                            .col-sm-5
+                                .info
+                                    h2.info__title ABOUT
+                                    h3.info__subtitle WALNUT.M Y.S Studio
+                                    p.info__content Every couple of days, Sinclair Browne fights through traffic in Times Square, squeezes his delivery truck into a parking spot, walks up four flights of stairs and delivers groceries to a guy whose order he knows by heart. <br><br> “Iʼm fast,” said Mr. Browne, slicing his hands in the air, ninja style. “In and out, in and out.” <br><br>Delivering food requires military precision: Bananas canʼt get cold. Produce canʼt get warm. Eggs, of course, must not get broken. And people expect their food to arrive at specific times.
+                            .col-sm-2.col-sm-push-1.col-xs-5.col-xs-push-3
+                                .parallax-container
+                                    .frame.rellax(data-rellax-speed="3" )
+                                        //- .frame__inner
+                                    img.image.rellax(data-rellax-speed="7")(src="images/about.png", alt="")
+                            
+
+                //- End about
+                //- Start service
+                .section.service(data-anchor="thirdPage") 
+                    .container-fluid
+                        .row
+                            .col-sm-4.col-sm-push-6
+                                .info
+                                    h2.info__title SERVICE
+                                    h3.info__subtitle What we can do?
+                                    p.info__content Delivering perishables is much trickier than delivering Tshirts, books or pretty much anything else people can buy online. The biggest challenge is that groceries must stay cold for hours at a time. But there are myriad other complications, too. Bananas and apples give off fumes that can hurt loose leaf lettuce, so they canʼt be stored too close. Tomatoes lose flavor when they cool to below 55 degrees. Milk always has to be packaged upright.
+                                a(href="#!").btn.btn--primary BOOKING
+                            .col-sm-2.col-sm-pull-4.col-xs-5
+                                .parallax-container
+                                    .frame.rellax(data-rellax-speed="3" )
+                                        //- .frame__inner
+                                    img.image.rellax(data-rellax-speed="7")(src="images/service.png", alt="") 
+                        
+                            
+                //- End service
+                //- Start shop
+                .section(data-anchor="forthPage")
+                    .container
+                        .info
+                            h2.info__title Y.S Studio Shop
+                            h3.info__subtitle Got a special one for you!
+
+                        .thumbnails
+                            .row.owl-carousel
+                                .test
+                                    a.thumbnail
+                                        .thumbnail__imgBox
+                                            img.image(src="images/shop001.png", alt="")
+                                        h5.thumbnail__title   Lorem ipsum.<br> NTD 5,000
+                                        p.thumbnail__content  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                .test
+                                    a.thumbnail
+                                        .thumbnail__imgBox
+                                            img.image(src="images/shop002.png", alt="")
+                                        h5.thumbnail__title   Lorem ipsum.<br> NTD 3,980
+                                        p.thumbnail__content  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                .test
+                                    a.thumbnail
+                                        .thumbnail__imgBox
+                                            img.image(src="images/shop003.png", alt="")
+                                        h5.thumbnail__title   Lorem ipsum.<br> NTD 3,000
+                                        p.thumbnail__content  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                //- End shop
+                //- Start contact
+                .section.contact(data-anchor="fifthPage") 
+                    .container
+                        .row
+                            .col-sm-6
+                                .info
+                                    h2.info__title CONTACT
+                                    h3.info__subtitle Letʼs go the wooden party!
+                                    p.info__content As the competition heats up, Amazon and others will be relying on drivers like Mr. Browne, who makes $13 an hour, plus tips, to handle the biggest challenges of succeeding in the online grocery business.
+                                .contact__item
+                                    h5.contact__label Email
+                                    a.contact__link(href="mailto:123@mail.com") 123@mail.com
+                                .contact__item
+                                    h5.contact__label Tel
+                                    a.contact__link(href="tel:02-12345678") 02-12345678
+                                .contact__item
+                                    h5.contact__label Address
+                                    a.contact__link(href="https://goo.gl/maps/f2u6urQJL982" target="_blank")  Lorem ipsum dolor sit amet,Porro, saepe.
+                            .col-sm-2.col-sm-push-1.col-xs-5.col-xs-push-3
+                                .parallax-container
+                                    .frame.rellax(data-rellax-speed="3" )
+                                        //- .frame__inner
+                                    img.image.rellax(data-rellax-speed="7")(src="images/contact.png", alt="") 
+
+                //- End contact
+                //- Start footer
+                .section.fp-auto-height(data-anchor="sixthPage") 
+                    footer.footer 
+                        .container 
+                            a.footer__logo(href="#!")
+                            .row
+                                .col-sm-2.col-xs-6
+                                    ul.list
+                                        li
+                                            a.list__link(href="#secondPage") About
+                                        li
+                                            a.list__link(href="#thirdPage") Service
+                                        li
+                                            a.list__link(href="#forthPage") Shop
+                                        li
+                                            a.list__link(href="#fifthPage") Contact
+                                .col-sm-2.col-xs-6
+                                    ul.list
+                                        li
+                                            a.list__link(href="#!") FAQ
+                                        li
+                                            a.list__link(href="#!") Order
+                                        li
+                                            a.list__link(href="#!") Our Work
+                                .col-sm-4.col-xs-12.contact__items
+                                    .contact__item
+                                        h5.contact__label Email
+                                        a.contact__link(href="mailto:123@mail.com") 123@mail.com
+                                    .contact__item
+                                        h5.contact__label Tel
+                                        a.contact__link(href="tel:02-12345678") 02-12345678
+                                    .contact__item
+                                        h5.contact__label Address
+                                        a.contact__link(href="https://goo.gl/maps/f2u6urQJL982" target="_blank")  Lorem ipsum dolor sit amet,Porro, saepe.
+                                .col-sm-4.col-xs-12
+                                    .nav__icon-group
+                                        a(href="https://www.facebook.com" target="_blank")
+                                            i.icon.fa.fa-facebook-square
+                                        a(href="https://www.instagram.com" target="_blank")
+                                            i.icon.fa.fa-instagram
+
+                            p.copyright Copyright © Pan pin chun 2017 course practice of WALNUT.M Y.S. STUDIO
+                //- End footer
+            ul#myMenu.sideNav
+                li(data-menuanchor="firstPage")
+                    a.sideNav__item(href="#firstPage")
+                        span W
+                li(data-menuanchor="secondPage")
+                    a.sideNav__item(href="#secondPage")
+                        span O
+                li(data-menuanchor="thirdPage")
+                    a.sideNav__item(href="#thirdPage")
+                        span O
+                li(data-menuanchor="forthPage")
+                    a.sideNav__item(href="#forthPage")
+                        span D
+                li(data-menuanchor="fifthPage")
+                    a.sideNav__item(href="#fifthPage")
+                        span Y
+
+        //- Script - -
+        //- plugin
+        script(type='text/javascript' src="./js/jquery-3.2.1.min.js")
+        script(type='text/javascript' src="./js/jquery.fullpage.min.js")
+        script(type='text/javascript' src="./js/owl.carousel.js")
+        script(type='text/javascript' src="./js/rellax.min.js")
+        //- custom
+        script(type='text/javascript' src="./js/all.js")
+        //- Script - End

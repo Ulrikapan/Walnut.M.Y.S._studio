@@ -1,0 +1,549 @@
+@charset "UTF-8"
+
+// 顏色定義變數
+$color_black: #1B1C1B
+$color_gold: #DCB672
+$color_white: #FEFFFE
+// 顏色定義變數-end
+
+
+* 
+	font-family: 'Playfair Display','Roboto', 'serif','Arial','微軟正黑體'
+	position: relative
+	box-sizing: border-box
+	// border: 1px solid orange
+body,html
+	margin: 0
+	padding: 0
+a
+	color: $color_white
+	text-decoration: none
+	&:hover, &:visited, &:focus
+		text-decoration: none
+		color: $color_white
+ul
+	list-style: none
+	margin: 0
+	padding: 0
+
+
+// ----------------------------
+// $Catalog 目錄
+// ----------------------------
+// *Globle
+// *Text
+// *Icon
+// *Button
+// *Layout
+// *sideNav
+// *header
+// *hero
+// *about
+// *service
+// *shop
+// *contact
+// *footer
+// ----------------------------
+
+
+
+// ----------------------------
+// *Globle
+// ----------------------------
+
+.wrapper
+	background-color: $color_black
+
+@media screen and (max-width: 768px)
+	.section
+		padding-top: 70px
+
+
+.parallax-container
+	padding-top: 120px
+.parallax-container .frame
+	position: absolute
+	border: 5px solid $color_gold
+	width: 170%
+	padding-top: 170%
+	bottom: 25px
+.parallax-container img.image
+	width: 100%
+	margin-left: 30%
+
+@media screen and (max-width: 768px)
+	.parallax-container
+		padding-top: 0px
+	.parallax-container .frame
+		width: 130%
+		padding-top: 130%
+
+// ----------------------------
+// *Text
+// ----------------------------
+
+h1, h2, h3, h4, h5, h6
+	margin: 0
+
+.heading
+	font-size: 72px
+	color: $color_white
+	margin-bottom: 48px
+@media screen and (max-width: 768px)
+	.heading
+		font-size: 56px
+.info
+	color: white
+	.info__title
+		font-size: 48px
+		margin-bottom: 16px
+	.info__subtitle
+		font-size: 40px
+		padding-bottom: 24px
+		margin-bottom: 48px
+		&:after
+			content: ''
+			position: absolute
+			width: 160px
+			height: 4px
+			background-color: $color_gold
+			bottom: 0px
+			left: 0px
+	.info__content
+		font-size: 16px
+		line-height: 30px
+
+@media screen and (max-width: 768px)
+	.info
+		.info__title
+			font-size: 36px
+			margin-bottom: 16px
+		.info__subtitle
+			font-size: 26px
+			padding-bottom: 24px
+			margin-bottom: 48px
+
+		.info__content
+			font-size: 16px
+			line-height: 30px
+			.xs-none
+				display: none
+// ----------------------------
+// *Icon
+// ----------------------------
+
+
+
+// ----------------------------
+// *Button
+// ----------------------------
+
+.btn.btn--primary
+	padding: 12px 52px
+	border: 2px solid $color_gold
+	color: $color_gold
+	font-size: 20px
+	background-color: transparent
+	transition: all .3s
+	&:hover
+		color: $color_white
+		background-color: $color_gold
+
+
+// ----------------------------
+// *Layout
+// ----------------------------
+
+
+
+// ----------------------------
+// *sideNav
+// ----------------------------
+.sideNav
+	position: fixed
+	right: 0
+	top: 50%
+	transform: translateY(-50%)
+	z-index: 1000
+@media screen and (max-width: 960px)
+	.sideNav
+		display: none
+.sideNav__item
+	display: inline-block
+	text-decoration: none
+	color: $color_white
+	font-size: 18px
+	width: 160px
+	height: 20px
+	line-height: 20px
+	margin-top: 8px
+	margin-bottom: 8px
+	&:active, &:hover, &:visited
+		color: $color_white
+	span
+		position: absolute
+		left: 50%
+		transform: translateX(-50%)
+		transition: all .3s
+
+.active .sideNav__item span
+	left: 32px
+	transform: translateX(0)
+
+.sideNav__item:before
+	content: ''
+	position: absolute
+	right: 0
+	top: 0
+	height: 100%
+	width: 0
+	background-color: $color_gold
+	transition: all .3s
+
+.active .sideNav__item:before
+	width: 100%
+
+// ----------------------------
+// *header
+// ----------------------------
+
+
+.header
+	position: fixed
+	width: 100%
+	top: 0
+	left: 0
+	z-index: 1000
+
+.navbar__logo
+	width: 144px
+	height: 144px
+	background: url('../images/logo.png')
+	transition: all .3s
+	background-position: center center
+	background-size: 60px
+	background-repeat: no-repeat
+	display: inline-block
+	transform: translateY(-25%)
+.navbar__logo.ontheTop
+	background-color: $color_gold
+	background-size: 80px
+	transform: translateY(0%)
+
+@media screen and (max-width: 960px)
+	.navbar__logo, .navbar__logo.ontheTop
+		width: 80px
+		height: 80px
+		background-color: transparent
+		position: fixed
+		left: 50%
+		transform: translateX(-50%)
+
+
+
+
+
+.navbar__nav
+	float: right
+
+// @media screen and (max-width:960px)
+// 	.navbar__nav
+// 		display: none
+
+@media screen and (max-width: 960px)
+	.popup-nav
+		position: fixed
+		width: 100%
+		height: 100vh
+		background-color: $color_black
+		left: 0
+		top: 0
+		opacity: 0
+		visibility: hidden
+		transition: all .3s
+	.navbar__nav
+		text-align: center
+		padding-top: 56px
+		transition: all .3s
+		.nav__menu
+			display : block
+			li
+				display: block
+	#overlay:target
+		opacity: 1
+		visibility: visible
+	// popup close
+	.popup-nav__close
+		float: right
+		width: 50px
+		height: 50px
+		padding: 10px
+		position: absolute
+		right: 0
+		top: 0
+		cursor: pointer
+		transform: rotate(0deg)
+		transition: all .3s
+		span
+			width: 60%
+			height: 2px
+			background-color: $color_gold
+			position: absolute
+			left: 50%
+			top: 50%
+		span:nth-child(1)
+			transform: translate(-50%, -50%) rotate(45deg)
+		span:nth-child(2)
+			transform: translate(-50%, -50%) rotate(-45deg)
+		&:hover
+			transform: rotate(180deg)
+
+.nav__menu
+	display: inline-block
+	font-size: 0px
+	li
+		display: inline-block
+	.menu__item
+		display: block
+		padding: 24px
+		color: $color_white
+		line-height: 32px
+		font-size: 18px
+		cursor: pointer
+		transition: all .3s
+		&:hover
+			color: $color_gold
+.nav__icon-group
+	display: inline-block
+	vertical-align: middle
+	margin-left: 8px
+	margin-right: 8px
+	.icon
+		font-size: 30px
+		padding: 8px
+		color: $color_gold
+		transition: all .3s
+		cursor: pointer
+		&:hover
+			transform: translateY(-15%)
+
+.menu-toggle
+	// border: 1px solid white
+	float: right
+	width: 50px
+	height: 50px
+	padding: 10px
+	position: absolute
+	right: 0
+	top: 0
+	margin-right: -16px
+	cursor: pointer
+
+	span
+		width: 60%
+		height: 2px
+		background-color: $color_gold
+		position: absolute
+		left: 50%
+		transform: translate(-50%, -50%)
+	span:nth-child(1)
+		top: 30%
+	span:nth-child(2)
+		top: 50%
+	span:nth-child(3)
+		top: 70%
+		
+@media screen and (min-width: 961px)
+	.menu-toggle
+		display: none
+
+// ----------------------------
+// *hero
+// ----------------------------
+.hero
+	background-image: url("../images/hero_bg.png")
+	background-size: cover
+	background-position: center center
+	&:before
+		content: ''
+		width: 100%
+		height: 100%
+		background-color: darken($color_black,4)
+		opacity: 0.7
+		position: absolute
+		left: 0
+		top: 0
+@media screen and (max-width:768px)
+	.hero
+		.container
+			transform: translateY(-30%)
+		.scrollDown-btn
+			bottom: 20%
+.scrollDown-btn
+	width: 50px
+	height: 50px
+	border: 1px solid $color_white
+	border-radius: 50%
+	background-image: url("../images/arrow.svg")
+	background-size: 20px
+	background-repeat: no-repeat
+	background-position: center center
+	position: absolute
+	bottom: 24px
+	left: 50%
+	transform: translateX(-50%)
+	animation: breath 2s infinite
+
+@keyframes breath
+	0%
+		opacity: 0.4
+		transform: translate(-50%,-15%)
+	50%
+		opacity: 1
+		transform: translate(-50%,0%)
+	100%
+		opacity: 0.4
+		transform: translate(-50%,-15%)
+// ----------------------------
+// *about
+// ----------------------------
+
+
+// ----------------------------
+// *service
+// ----------------------------
+.service
+	.parallax-container img.image
+		width: 300%
+		padding-top: 20%
+	.parallax-container .frame
+		bottom: 40px
+		left: 0px
+	.parallax-container img.image
+		margin-left: -16px
+
+// ----------------------------
+// *shop
+// ----------------------------
+.thumbnails
+	.col-sm-4
+		padding-left: 0px
+		padding-right: 0px
+
+.thumbnail
+	color: $color_white
+	display: inline-block
+	cursor: pointer
+	transition: all .3s
+	border: 1.5px solid transparent
+	&:hover, &:active, &:visited
+		color: $color_white
+	&:hover
+		border: 1.5px solid $color_gold
+
+.thumbnail__imgBox
+	box-sizing: border-box
+	padding-top: calc( 100% * 9 / 16)
+	margin-bottom: 16px
+	.image
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		max-width: 100%
+		max-height: 100%
+.thumbnail__title
+	padding: 0 20px
+	font-size: 22px
+	color: $color_gold
+.thumbnail__content
+	padding: 0 20px
+	font-size: 16px
+	line-height: 32px
+
+// owl carousel custom
+.owl-nav
+	text-align: center
+	margin-top: 24px
+
+.owl-prev, .owl-next
+	display: inline-block
+	width: 40px
+	height: 40px
+	border-radius: 50%
+	border: 1px solid $color_white
+	margin: 0 16px
+	background-image: url("../images/arrow.svg")
+	background-size: 16px
+	background-repeat: no-repeat
+	background-position: center center
+
+.owl-prev
+	transform: rotate(90deg)
+.owl-next
+	transform: rotate(-90deg)
+
+// ----------------------------
+// *contact
+// ----------------------------
+.contact__item
+	font-size: 18px
+	padding: 8px 0
+.contact__label
+	color: $color_gold
+.contact__link
+	color: $color_white
+	transition: all .3s
+	&:hover
+		color: rgba($color_white, .6)
+
+
+.contact
+	.parallax-container img.image
+		width: 200%
+		padding-top: 100%
+
+// ----------------------------
+// *footer
+// ----------------------------
+.footer
+	// height: 400px
+	background-color: lighten($color_black,5)
+	a
+		cursor: pointer
+a.footer__logo
+	display: inline-block
+	margin-top: 10px
+	margin-bottom: 10px
+	width: 110px
+	height: 80px
+	background-image: url("../images/footer_logo.svg")
+	background-size: contain
+	background-position: center center
+	background-repeat: no-repeat
+
+.list
+	padding-bottom: 24px
+	.list__link
+		display: inline-block
+		font-size: 16px
+		margin-bottom: 10px
+		transition: all .3s
+		&:hover
+			color: rgba($color_white, .6)
+
+.contact__items
+	padding-bottom: 46px
+
+.copyright
+	display: block
+	color: lighten($color_black, 15)
+	margin: 50px 0 40px 0
+	text-align: center
+
+.footer
+	.nav__icon-group
+		padding: 0
+		margin: 0
+
+
